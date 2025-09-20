@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Crypto Wallet Design System - Dark Blue Gradient Theme */
+
+@layer base {
+  :root {
+    /* Main background gradient */
+    --background: 222 84% 5%; /* #0f172a equivalent */
+    --background-end: 224 76% 48%; /* #1e3a8a equivalent */
+    --foreground: 0 0% 98%; /* near white */
+
+    /* Glass card colors */
+    --card: 224 71% 20%; /* lighter blue for cards */
+    --card-foreground: 0 0% 95%;
+    --card-glass: 224 71% 15%; /* glassmorphism overlay */
+
+    --popover: 224 71% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Crypto accent colors */
+    --primary: 187 100% 42%; /* cyan for primary actions */
+    --primary-foreground: 222 84% 5%;
+
+    --secondary: 224 71% 25%; /* medium blue */
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 224 71% 18%;
+    --muted-foreground: 215 25% 65%;
+
+    /* Send button - cyan */
+    --accent-send: 187 100% 42%;
+    --accent-send-foreground: 222 84% 5%;
+
+    /* Receive button - green */
+    --accent-receive: 142 76% 36%;
+    --accent-receive-foreground: 0 0% 98%;
+
+    /* Status colors */
+    --success: 142 76% 36%; /* green */
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 48 96% 53%; /* yellow */
+    --warning-foreground: 222 84% 5%;
+    
+    --destructive: 0 84% 60%; /* red */
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 224 71% 25%;
+    --input: 224 71% 18%;
+    --ring: 187 100% 42%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode uses same values as this is a dark-themed app */
+    --background: 222 84% 5%;
+    --background-end: 224 76% 48%;
+    --foreground: 0 0% 98%;
+    --card: 224 71% 20%;
+    --card-foreground: 0 0% 95%;
+    --card-glass: 224 71% 15%;
+    --popover: 224 71% 15%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 187 100% 42%;
+    --primary-foreground: 222 84% 5%;
+    --secondary: 224 71% 25%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 224 71% 18%;
+    --muted-foreground: 215 25% 65%;
+    --accent-send: 187 100% 42%;
+    --accent-send-foreground: 222 84% 5%;
+    --accent-receive: 142 76% 36%;
+    --accent-receive-foreground: 0 0% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --warning: 48 96% 53%;
+    --warning-foreground: 222 84% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 224 71% 25%;
+    --input: 224 71% 18%;
+    --ring: 187 100% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-[hsl(var(--background))] to-[hsl(var(--background-end))] text-foreground min-h-screen;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Glass morphism utilities */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl;
+  }
+
+  .glass-overlay {
+    @apply bg-card-glass/60 backdrop-blur-sm;
+  }
+
+  /* Crypto wallet specific animations */
+  .wallet-enter {
+    @apply animate-fade-in;
+  }
+
+  .balance-glow {
+    @apply drop-shadow-[0_0_20px_hsl(var(--primary)/0.3)];
+  }
+}
